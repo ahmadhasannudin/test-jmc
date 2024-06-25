@@ -12,19 +12,23 @@ make init
 
 ## Manual Installation
 1. makesure you have setting up database config in .env file
-2. generate key
+2. install dependencies
+    ```bash
+    composer install
+    ```
+3. generate key
     ```bash
     php artisan key:generate
     ```
-3. run migration
+4. run migration
     ```bash
     php artisan migrate
     ```
-4. run database seeder (optional)
+5. run database seeder (optional)
     ```bash
     php artisan migrate:refresh
     ```
-4. run the server 
+6. run the server 
     ```bash
     php artisan serve
     ```

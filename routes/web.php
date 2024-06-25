@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Provinsi;
 use App\Livewire\Show;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Show::class);
+Route::get('/', function () {
+    return redirect('/provinsi');
+});
+Route::get('/provinsi', Provinsi::class)->name('provinsi');
+Route::get('/kabupaten', Provinsi::class)->name('kabupaten');

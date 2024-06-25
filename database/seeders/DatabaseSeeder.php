@@ -12,11 +12,8 @@ class DatabaseSeeder extends Seeder {
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Ahmad Hasanudin',
-            'email' => 'ahmad.0.hasanudin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => 'codingCollective'
+        $this->call([
+            ProvinsiSeeder::class,
         ]);
     }
 }

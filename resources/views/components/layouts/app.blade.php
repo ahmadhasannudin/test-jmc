@@ -7,34 +7,37 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ isset($title) ? $title . ' - ' . config('app.name') : config('app.name') }}</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/robsontenorio/mary@0.44.2/libs/currency/currency.js">
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
-        /* Active page highlight */
-        .mary-table-pagination span[aria-current="page"]>span {
-            @apply bg-primary text-base-100
+        .nav-item.active {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
         }
 
-        /* For dark mode*/
-        .mary-table-pagination span[aria-disabled="true"] span {
-            @apply bg-inherit
-        }
-
-        /* For dark mode*/
-        .mary-table-pagination button {
-            @apply bg-base-100
+        .nav-item.active>a.nav-link {
+            color: white;
         }
     </style>
+    @livewireStyles
 </head>
 
 <body class="min-h-screen font-sans antialiased bg-base-200/50 dark:bg-base-200">
-    <x-main full-width>
-        <x-slot:content>
-            {{ $slot }}
-        </x-slot:content>
-    </x-main>
-    <x-toast />
+    @livewire('navbar')
+    <div class="container mt-5">
+        {{ $slot }}
+    </div>
+    @livewireScripts
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
