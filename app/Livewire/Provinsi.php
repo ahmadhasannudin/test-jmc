@@ -17,7 +17,12 @@ class Provinsi extends Component {
     {
         return view(
             'livewire.provinsi.index',
-            ['provinsi' => Model::orderBy('nama')->paginate(10)]
+            [
+                'provinsi' => Model::orderBy('nama')
+                    ->withCount('kabupaten')
+                    ->withSum('kabupaten', 'populasi')
+                    ->paginate(10)
+            ]
         );
     }
     public function create()
