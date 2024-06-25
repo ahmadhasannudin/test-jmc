@@ -12,6 +12,9 @@
             <li class="nav-item {{ $currentRoute == 'kabupaten' ? 'active' : '' }}">
                 <a class="nav-link" wire:navigate href="{{ route('kabupaten') }}">Kabupaten</a>
             </li>
+            <li class="nav-item {{ $currentRoute == 'report' ? 'active' : '' }}">
+                <a class="nav-link" wire:navigate href="{{ route('report') }}">Report</a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -2,6 +2,7 @@
 
 use App\Livewire\Kabupaten;
 use App\Livewire\Provinsi;
+use App\Livewire\Report;
 use App\Livewire\Show;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,4 @@ Route::get('/', function () {
 });
 Route::get('/provinsi', Provinsi::class)->name('provinsi');
 Route::get('/kabupaten', Kabupaten::class)->name('kabupaten');
+Route::get('/report', Report::class)->name('report');
