@@ -8,7 +8,7 @@ make init
 - container run on ``` localhost:8000 ```
 
 ## Manual Installation
-1. makesure you have setting up database config in .env file
+1. make sure you have setting up database config in .env file
 2. install dependencies
     ```bash
     composer install
@@ -23,7 +23,7 @@ make init
     ```
 5. run database seeder (optional)
     ```bash
-    php artisan migrate:refresh
+    php artisan db:seed
     ```
 6. run the server 
     ```bash
