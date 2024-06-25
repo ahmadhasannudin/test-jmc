@@ -59,7 +59,7 @@ class Kabupaten extends Component {
             ->where('nama', $this->nama)
             ->first();
 
-        if ($existingKabupaten) {
+        if (empty($this->kabupaten_id) && $existingKabupaten) {
             $error = ValidationException::withMessages([
                 'name' => ['Name already exist'],
             ]);
@@ -76,11 +76,6 @@ class Kabupaten extends Component {
             $this->kabupaten_id ? 'Kabupaten Updated Successfully.' : 'Kabupaten Created Successfully.'
         );
         $this->closeModal();
-        $this->nama = null;
-        $this->kabupaten_id = null;
-        $this->provinsi_id = null;
-        $this->provinsi_nama = null;
-        $this->populasi = null;
     }
     public function delete($id)
     {
@@ -103,6 +98,11 @@ class Kabupaten extends Component {
     }
     public function closeModal()
     {
+        $this->nama = null;
+        $this->kabupaten_id = null;
+        $this->provinsi_id = null;
+        $this->provinsi_nama = null;
+        $this->populasi = null;
         $this->dispatch('closeModal');
     }
 }

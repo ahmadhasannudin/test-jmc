@@ -40,7 +40,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">{{ $kabupaten_id ? 'Update' : 'Save' }}</button>
-                    <button wire:click="closeModal()" class="btn btn-secondary">Cancel</button>
+                    <button type="button" wire:click="closeModal()" class="btn btn-secondary">Cancel</button>
                 </div>
             </form>
         </div>
